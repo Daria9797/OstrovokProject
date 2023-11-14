@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -24,6 +25,7 @@ public class TestOstrovok extends TestBase {
 
     })
     @ParameterizedTest()
+    @Tag("BLOCKER")
     @DisplayName("Текст в заголовке соответствует выбранному языку")
     void titleMatchesLanguage(String language, String text) {
 
@@ -34,6 +36,7 @@ public class TestOstrovok extends TestBase {
     }
 
     @Test
+    @Tag("NORMAL")
     @DisplayName("Результаты поиска соответствуют выбранному городу")
     void resultMatchCity() {
 
@@ -47,6 +50,7 @@ public class TestOstrovok extends TestBase {
 
 
     @Test
+    @Tag("BLOCKER")
     @DisplayName("Название отеля в карточке совпадает с выбранным на странице результатов названием")
     void nameHotelMatchResult() {
 
@@ -65,6 +69,7 @@ public class TestOstrovok extends TestBase {
 
 
     @Test
+    @Tag("NORMAL")
     @DisplayName("Понравившийся отель попадает в избранное")
     void hotelMoveFavorite() {
 
@@ -82,6 +87,7 @@ public class TestOstrovok extends TestBase {
     }
 
     @Test
+    @Tag("BLOCKER")
     @DisplayName("В форме авторизации отображаются email,пароль,кнопка входа ")
     void formAvtorizationHasFields() {
 
