@@ -69,7 +69,7 @@ public class TestOstrovok extends TestBase {
 
 
     @Test
-    @Tag("NORMAL")
+    @Tag("BLOCKER")
     @DisplayName("Понравившийся отель попадает в избранное")
     void hotelMoveFavorite() {
 
