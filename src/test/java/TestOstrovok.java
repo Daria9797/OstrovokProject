@@ -32,7 +32,7 @@ public class TestOstrovok extends TestBase {
     }
 
     @Test
-    @Tag("NORMAL")
+    @Tag("BLOCKER")
     @DisplayName("Результаты поиска соответствуют выбранному городу")
     void resultMatchCity() {
 
