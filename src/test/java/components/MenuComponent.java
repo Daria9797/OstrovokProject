@@ -9,34 +9,23 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class MenuComponent {
-    public SelenideElement buttonMenu = $(byAttribute("data-testid", "menu-widget-control")),
+    public SelenideElement buttonChangeLanguage = $(byAttribute("data-testid", "language-widget-control")),
 
-    favoriteLink = $(byAttribute("data-testid", "header-favorite-link")),
+    fieldEmail = $(byAttribute("name", "email")),
 
-    buttonChangeLanguage = $(byAttribute("data-testid", "language-widget-control")),
-
-    fieldEmail=$(byAttribute("name", "email")),
-
-    fieldPassword=$(byAttribute("name", "pass")),
-    buttonAvtorization=$(byAttribute("data-testid", "user-widget-sign-in-button"));
+    fieldPassword = $(byAttribute("name", "pass")),
+            buttonAvtorization = $(byAttribute("data-testid", "user-widget-sign-in-button"));
     ElementsCollection chooseLanguage = $$(byAttribute("data-testid", "language-widget-item")),
-     iconAvtorization =$$(".clickOutside");
+            iconAvtorization = $$(".clickOutside");
 
-    public void openMenu() {
-        buttonMenu.click();
-    }
-
-    public void chooseSectionFavorites() {
-        favoriteLink.click();
-    }
 
     public void changeLanguage(String language) {
         buttonChangeLanguage.click();
         chooseLanguage.findBy(text(language)).click();
     }
 
-    public void openFormAvtorization(){
+    public void openFormAvtorization() {
 
-        iconAvtorization.findBy(text("Log in")).click();
+        iconAvtorization.findBy(text("Войти")).click();
     }
 }
