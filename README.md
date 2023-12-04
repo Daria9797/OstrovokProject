@@ -1,18 +1,18 @@
 # Проект по автоматизации тестовых сценариев для проекта [Ostrovok](https://ostrovok.ru/?sid=40b40bd9-971f-4c4c-9ef7-eede8c5bfe63)
 
-* [Технологии и инструменты](https://github.com/Daria9797/OstrovokProject#-технологии-и-инструменты)
+* [Технологии и инструменты][https://github.com/Daria9797/OstrovokProject#-технологии-и-инструменты]
 
-* [Примеры автоматизированных тест-кейсов](https://github.com/Daria9797/OstrovokProject#-примеры-автоматизированных-тест-кейсов)
+* [Примеры автоматизированных тест-кейсов][https://github.com/Daria9797/OstrovokProject#-примеры-автоматизированных-тест-кейсов]
 
-* [Сборка в Jenkins](https://github.com/Daria9797/OstrovokProject#-сборка-в-jenkins)
+* [Сборка в Jenkins][https://github.com/Daria9797/OstrovokProject#-сборка-в-jenkins]
 
-* [Запуск из терминала](https://github.com/Daria9797/OstrovokProject#-запуск-из-терминала)
+* [Запуск из терминала][https://github.com/Daria9797/OstrovokProject#-запуск-из-терминала]
 
-* [Allure отчет](https://github.com/Daria9797/OstrovokProject#-allure-отчёт)
+* [Allure отчет][https://github.com/Daria9797/OstrovokProject#-allure-отчёт]
 
-* [Уведомление в Telegram при помощи бота](https://github.com/Daria9797/OstrovokProject#-уведомление-в-telegram-при-помощи-бота)
+* [Уведомление в Telegram при помощи бота][https://github.com/Daria9797/OstrovokProject#-уведомление-в-telegram-при-помощи-бота]
 
-* [Примеры видео выполнения тестов на Selenoid](https://github.com/Daria9797/OstrovokProject#-примеры-видео-выполнения-тестов-на-selenoid)
+* [Примеры видео выполнения тестов на Selenoid][https://github.com/Daria9797/OstrovokProject#-примеры-видео-выполнения-тестов-на-selenoid]
 
 
 ## Технологии и инструменты
