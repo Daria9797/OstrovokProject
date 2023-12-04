@@ -3,8 +3,6 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import pages.FavoritesPage;
-import pages.HotelPage;
 import pages.MainPage;
 import pages.ResultPage;
 
@@ -14,8 +12,6 @@ public class TestOstrovok extends TestBase {
 
     MainPage main = new MainPage();
     ResultPage result = new ResultPage();
-    HotelPage hotel = new HotelPage();
-    FavoritesPage favorite = new FavoritesPage();
 
 
     @CsvSource(value = {
@@ -40,6 +36,10 @@ public class TestOstrovok extends TestBase {
     @DisplayName("Результаты поиска соответствуют выбранному городу")
     void resultMatchCity() {
 
+        step("Выбираем отображение контента на русском языке", () -> {
+              main.changeLang("Русский");
+        });
+
         step("Ищем отель по выбранному городу", () -> {
             main.searchHotel();
         });
@@ -51,19 +51,33 @@ public class TestOstrovok extends TestBase {
 
     @Test
     @Tag("BLOCKER")
-    @DisplayName("Название отеля в карточке совпадает с выбранным на странице результатов названием")
-    void nameHotelMatchResult() {
+    @DisplayName("Понравившийся отель удаляется из избранного")
+    void hotelDeleteFavorite() {
+
+        step("Выбираем отображение контента на русском языке", () -> {
+            main.changeLang("Русский");
+        });
 
         step("Ищем отель по выбранному городу", () -> {
             main.searchHotel();
         });
-        step("Открываем карточку отеля", () -> {
-            result.openCardHotel();
+        step("Добавляем отель в избранное", () -> {
+            result.addFavorite();
         });
 
-        step("Проверяем соответстствие названия отеля с названием на странице результатов", () -> {
-            hotel.checkNameHotel();
+        step("Удаляем отель из избранного", () -> {
+            result.addFavorite();
         });
+        step("Открываем список избранных отелей", () -> {
+            result.openFavorite();
+
+        });
+
+        step("Проверяем,что отель удалился из избранного", () -> {
+            result.checkNotExistHotel();
+
+        });
+
 
     }
 
@@ -73,14 +87,23 @@ public class TestOstrovok extends TestBase {
     @DisplayName("Понравившийся отель попадает в избранное")
     void hotelMoveFavorite() {
 
+        step("Выбираем отображение контента на русском языке", () -> {
+            main.changeLang("Русский");
+        });
+
         step("Ищем отель по выбранному городу", () -> {
             main.searchHotel();
         });
         step("Добавляем отель в избранное", () -> {
             result.addFavorite();
         });
+        step("Открываем список избранных отелей", () -> {
+            result.openFavorite();
+
+        });
         step("Проверяем,что понравившийся отель попал в избранное", () -> {
-            favorite.checkFavorites();
+            result.checkFavorite();
+
         });
 
 
@@ -90,6 +113,10 @@ public class TestOstrovok extends TestBase {
     @Tag("BLOCKER")
     @DisplayName("В форме авторизации отображаются email,пароль,кнопка входа ")
     void formAvtorizationHasFields() {
+
+        step("Выбираем отображение контента на русском языке", () -> {
+            main.changeLang("Русский");
+        });
 
         step("Открываем форму авторизации и проверяем наличие email,пароля,кнопки входа ", () -> {
             main.checkFieldsAvtorization();
