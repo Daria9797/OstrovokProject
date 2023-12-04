@@ -43,7 +43,7 @@ test {
     useJUnitPlatform()
 }
 
-task jenkins_task(type: Test) {
+task main_task(type: Test) {
     useJUnitPlatform {
        includeTags("BLOCKER")
     }
