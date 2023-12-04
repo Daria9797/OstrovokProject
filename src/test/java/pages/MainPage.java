@@ -1,4 +1,5 @@
 package pages;
+
 import com.codeborne.selenide.SelenideElement;
 import components.MenuComponent;
 
@@ -8,7 +9,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class MainPage {
 
-    MenuComponent menu=new MenuComponent();
+    MenuComponent menu = new MenuComponent();
 
     SelenideElement
             titlePage = $(".homepage-howdy-title"),
@@ -16,12 +17,16 @@ public class MainPage {
             buttonSearch = $(byAttribute("data-testid", "search-button"));
 
 
-    public String city = "Moscow, Russia";
-    public String nameHotel = "Page 20 Apart-Hotel";
+    public String city = "Москва, Россия";
 
-    public void checkTitleMatchLang(String language,String text) {
+
+    public void checkTitleMatchLang(String language, String text) {
         menu.changeLanguage(language);
         titlePage.shouldHave(text(text));
+    }
+
+    public void changeLang(String language) {
+        menu.changeLanguage(language);
     }
 
     public void searchHotel() {
@@ -29,12 +34,12 @@ public class MainPage {
         buttonSearch.click();
     }
 
-    public void checkFieldsAvtorization(){
+    public void checkFieldsAvtorization() {
 
         menu.openFormAvtorization();
-        menu.fieldEmail.shouldBe(exist,visible);
-        menu.fieldPassword.shouldBe(exist,visible);
-        menu.buttonAvtorization.shouldBe(exist,visible);
+        menu.fieldEmail.shouldBe(exist, visible);
+        menu.fieldPassword.shouldBe(exist, visible);
+        menu.buttonAvtorization.shouldBe(exist, visible);
 
     }
 }
